@@ -15,12 +15,12 @@ public class Config {
 		return Long.valueOf(1);
 	}
 
-	@Bean
+	@Bean("summary")
 	public String getSummary() {
 		return "Spring DI";
 	}
 
-	@Bean
+	@Bean("description")
 	public String getDescription() {
 		return "Dependency in Spring is a powerful feauture for inversion of control.";
 	}

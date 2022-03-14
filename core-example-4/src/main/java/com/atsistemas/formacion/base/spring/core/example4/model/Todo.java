@@ -3,6 +3,7 @@ package com.atsistemas.formacion.base.spring.core.example4.model;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,7 +28,7 @@ public class Todo implements ITodo {
 	}
 
 	@Autowired
-	public Todo(long i, String summary) {
+	public Todo(long i, @Qualifier("summary") String summary) {
 		this.id = i;
 		this.summary = summary;
 	}
@@ -53,6 +54,7 @@ public class Todo implements ITodo {
 	}
 
 	@Autowired
+	@Qualifier("description")
 	@Override
 	public void setDescription(String description) {
 		this.description = description;

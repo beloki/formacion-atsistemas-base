@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import com.atsistemas.formacion.base.spring.core.example2.model.ITodo;
 import com.atsistemas.formacion.base.spring.core.example2.model.Todo;
@@ -14,6 +15,7 @@ import com.atsistemas.formacion.base.spring.core.example2.model.Todo;
 public class Config {
 
 	@Bean
+	@Primary
 	public ITodo getTodo() {
 		ITodo todo = new Todo(0, "Spring DI");
 		todo.setDone(false);
