@@ -16,21 +16,20 @@ INSERT INTO public.generos (nombre) VALUES
 	 ('Ensayo'),
 	 ('Infantil'),
 	 ('Novela Negra');
-
-INSERT INTO public.libros (titulo,isbn,id_genero,id_autor) VALUES
-	 ('El señor de los anillos: La comunidad del anillo','111111',1,1),
-	 ('El castillo de Barbazul: Terra Alta III','111111',6,7),
-	 ('Jazz Cafe','111111',6,8),
-	 ('El camino de los reyes','111111',1,2),
-	 ('El robo del siglo','111111',5,4),
-	 ('Circo Máximo','111111',2,3),
-	 ('Endurance. El Legendario Viaje De Shackleton Al Polo Sur','111111',4,5),
-	 ('La fundación','111111',3,9),
-	 ('La suerte del los idiotas','111111',6,6),
-	 ('El señor de los anillos: Las dos torre','111111',1,1);
-INSERT INTO public.libros (titulo,isbn,id_genero,id_autor) VALUES
-	 ('Terra Alta','111111',6,7),
-	 ('El imperio final','111111',1,2);
+	 
+INSERT INTO public.libros (titulo,isbn,id_genero,id_autor,anno_publicacion) VALUES
+	 ('El señor de los anillos: La comunidad del anillo','111111',1,1,1954),
+	 ('El castillo de Barbazul: Terra Alta III','111111',6,7,2022),
+	 ('Jazz Cafe','111111',6,8,2015),
+	 ('El camino de los reyes','111111',1,2,2010),
+	 ('El robo del siglo','111111',5,4,2018),
+	 ('Circo Máximo','111111',2,3,2013),
+	 ('Endurance. El Legendario Viaje De Shackleton Al Polo Sur','111111',4,5,2015),
+	 ('La fundación','111111',3,9,1942),
+	 ('La suerte del los idiotas','111111',6,6,2019),
+	 ('El señor de los anillos: Las dos torres','111111',1,1,1954),
+	 ('Terra Alta','111111',6,7,2019),
+	 ('El imperio final','111111',1,2,2006);
 
 INSERT INTO public.perfil (codigo,descripcion) VALUES
 	 ('ADMIN','Administrador del sistema'),

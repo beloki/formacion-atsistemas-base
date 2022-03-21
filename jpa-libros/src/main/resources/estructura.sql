@@ -63,6 +63,7 @@ CREATE TABLE public.libros (
 	id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
 	titulo varchar NOT NULL,
 	isbn varchar NOT NULL,
+	anno_publicacion int4 NOT NULL,
 	id_genero int4 NOT NULL,
 	id_autor int4 NOT NULL,
 	CONSTRAINT libros_pk PRIMARY KEY (id),
