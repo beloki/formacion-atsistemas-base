@@ -22,13 +22,13 @@ public class Pelicula {
 	@Column(name = "GENERO", length = 20)
 	private String genero;
 	@Column(name = "FECHA_ESTRENO", length = 4)
-	private String fechaEstreno;
+	private Integer fechaEstreno;
 
 	public Pelicula() {
 		super();
 	}
 
-	public Pelicula(Integer id, String titulo, String director, String genero, String fechaEstreno) {
+	public Pelicula(Integer id, String titulo, String director, String genero, Integer fechaEstreno) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -69,11 +69,11 @@ public class Pelicula {
 		this.genero = genero;
 	}
 
-	public String getFechaEstreno() {
+	public Integer getFechaEstreno() {
 		return fechaEstreno;
 	}
 
-	public void setFechaEstreno(String fechaEstreno) {
+	public void setFechaEstreno(Integer fechaEstreno) {
 		this.fechaEstreno = fechaEstreno;
 	}
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.atsistemas.formacion.base.spring.examplewebapp.model.FiltrosPelicula;
 import com.atsistemas.formacion.base.spring.examplewebapp.model.Pelicula;
 import com.atsistemas.formacion.base.spring.examplewebapp.service.PeliculasService;
 
@@ -40,12 +41,12 @@ public class PeliculasController {
 	}
 
 	@GetMapping(value = "/peliculas/{idPelicula}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Pelicula modificarPelicula(@PathVariable(value = "idPelicula") Integer idPelicula) {
+	public Pelicula obtenerPelicula(@PathVariable(value = "idPelicula") Integer idPelicula) {
 		return peliculasService.buscarPelicula(idPelicula);
 	}
 
 	@PutMapping(value = "/peliculas/{idPelicula}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Pelicula guardarPelicula(@PathVariable(value = "idPelicula") Integer idPelicula,
+	public Pelicula modificarPelicula(@PathVariable(value = "idPelicula") Integer idPelicula,
 			@RequestBody Pelicula pelicula) {
 		pelicula.setId(idPelicula);
 		peliculasService.guardarPelicula(pelicula);
@@ -58,5 +59,20 @@ public class PeliculasController {
 	public void eliminarPelicula(@PathVariable(value = "idPelicula") Integer idPelicula) {
 		peliculasService.eliminarPelicula(idPelicula);
 
+	}
+
+	@GetMapping(value = "/peliculas/generos/{genero}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Pelicula> obtenerPeliculasGenero(@PathVariable(value = "genero") String genero) {
+		return peliculasService.buscarPeliculaGenero(genero);
+	}
+
+	@GetMapping(value = "/peliculas/search", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Pelicula> buscarPeliculas(FiltrosPelicula filtrosPelicula) {
+		return peliculasService.buscarPeliculas(filtrosPelicula);
+	}
+
+	@GetMapping(value = "/peliculas/21th", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Pelicula> buscarPeliculasSiglo21() {
+		return peliculasService.buscarPeliculasSiglo21();
 	}
 }
