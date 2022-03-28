@@ -1,15 +1,20 @@
 package com.atsistemas.formacion.base.spring.examplewebapp.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Pelicula {
 
 	private Integer id;
 
+	@NotEmpty
 	private String titulo;
-
+	@NotEmpty
 	private String director;
-
+	@NotEmpty
 	private String genero;
-
+	@NotEmpty(message = "")
+	@Size(min = 4, max = 4, message = "")
 	private String fechaEstreno;
 
 	public Pelicula() {
