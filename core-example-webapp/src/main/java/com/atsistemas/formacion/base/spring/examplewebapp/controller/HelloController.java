@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.atsistemas.formacion.base.spring.examplewebapp.controller.service.HelloService;
+import com.atsistemas.formacion.base.spring.examplewebapp.service.HelloService;
 
 @Controller
 public class HelloController {
