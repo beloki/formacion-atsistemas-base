@@ -25,4 +25,9 @@ public class LibroController {
 		return libroService.listadoLibros();
 	}
 
+	@GetMapping(value = "join", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> listarLibrosJoin() {
+		return libroService.listadoLibrosJoin();
+	}
+
 }

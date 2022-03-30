@@ -70,12 +70,12 @@ public class JpaPeliculaRepository implements PeliculaRepository {
 
 		if (filtrosPelicula.getDirector() != null) {
 			predicate = criteriaBuilder.and(predicate,
-					criteriaBuilder.equal(root.get("director"), filtrosPelicula.getDirector()));
+					criteriaBuilder.like(root.get("director"), "%"+filtrosPelicula.getDirector()+"%"));
 		}
 
 		if (filtrosPelicula.getFechaEstreno() != null) {
 			predicate = criteriaBuilder.and(predicate,
-					criteriaBuilder.equal(root.get("fechaEstreno"), filtrosPelicula.getFechaEstreno()));
+					criteriaBuilder.greaterThanOrEqualTo(root.get("fechaEstreno"), filtrosPelicula.getFechaEstreno()));
 		}
 
 		if (filtrosPelicula.getGenero() != null) {

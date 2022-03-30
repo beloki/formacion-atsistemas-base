@@ -24,4 +24,9 @@ public class JpaLibroRepository implements LibroRepository {
 		return em.createQuery("FROM Libro", Libro.class).getResultList();
 	}
 
+	@Override
+	public List<Libro> findAllJoin() {
+		return em.createQuery("FROM Libro l JOIN FETCH l.autor", Libro.class).getResultList();
+	}
+
 }

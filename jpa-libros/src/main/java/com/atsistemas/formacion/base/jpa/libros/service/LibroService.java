@@ -7,5 +7,7 @@ import com.atsistemas.formacion.base.jpa.libros.model.Libro;
 public interface LibroService {
 
 	List<Libro> listadoLibros();
+
+	List<Libro> listadoLibrosJoin();
 	
 }

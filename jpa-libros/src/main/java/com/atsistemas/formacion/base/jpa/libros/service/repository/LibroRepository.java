@@ -8,4 +8,6 @@ public interface LibroRepository {
 
 	List<Libro> findAll();
 
+	List<Libro> findAllJoin();
+
 }
