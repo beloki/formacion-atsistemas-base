@@ -85,3 +85,26 @@ CREATE TABLE public.usuario_perfil (
 	CONSTRAINT usuario_perfil_fk FOREIGN KEY (id_usuario) REFERENCES public.usuario(id),
 	CONSTRAINT usuario_perfil_fk_1 FOREIGN KEY (id_perfil) REFERENCES public.perfil(id)
 );
+
+-- public.pasillos definition
+
+-- Drop table
+
+-- DROP TABLE public.pasillos;
+CREATE TABLE public.pasillos (
+	codigo_pasillo varchar NOT NULL,
+	nombre varchar NOT NULL,
+	CONSTRAINT pasillos_pk PRIMARY KEY (codigo_pasillo)
+);
+
+-- public.estanterias definition
+
+-- Drop table
+
+-- DROP TABLE public.estanterias;
+CREATE TABLE public.estanterias (
+	codigo_pasillo varchar NOT NULL,
+	codigo_estanteria varchar NOT NULL,
+	nombre varchar NOT NULL,
+	CONSTRAINT estanterias_pk PRIMARY KEY (codigo_pasillo,codigo_estanteria)
+);
