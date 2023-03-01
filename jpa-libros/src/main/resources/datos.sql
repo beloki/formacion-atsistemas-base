@@ -52,3 +52,16 @@ INSERT INTO public.usuario_perfil (id_usuario,id_perfil) VALUES
 	 (3,2),
 	 (4,5),
 	 (4,3);
+	 
+INSERT INTO public.estanterias (codigo_pasillo,codigo_estanteria,nombre) VALUES
+	 ('1','A','Estantería 1A'),
+	 ('1','B','Estantería 1B'),
+	 ('1','C','Estantería 1C'),
+	 ('2','A','Estantería 2A'),
+	 ('2','B','Estantería 2B'),
+	 ('2','C','Estantería 2C');
+
+
+INSERT INTO public.pasillos (codigo_pasillo,nombre) VALUES
+	 ('1','Pasillo 1'),
+	 ('2','Pasillo 2');
