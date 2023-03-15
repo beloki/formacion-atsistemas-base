@@ -10,4 +10,10 @@ public interface LibroRepository {
 
 	List<Libro> findAllJoin();
 
+	List<Libro> findByTituloLike(String titulo);
+
+	List<Libro> findByAutor(String titulo);
+
+	List<Libro> findByAutorJoinFetch(String autor);
+
 }

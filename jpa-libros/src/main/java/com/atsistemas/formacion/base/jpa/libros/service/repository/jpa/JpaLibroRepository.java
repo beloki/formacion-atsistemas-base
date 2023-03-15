@@ -29,4 +29,22 @@ public class JpaLibroRepository implements LibroRepository {
 		return em.createQuery("FROM Libro l JOIN FETCH l.autor", Libro.class).getResultList();
 	}
 
+	@Override
+	public List<Libro> findByTituloLike(String titulo) {
+		return em.createQuery("FROM Libro where titulo like ?1", Libro.class).setParameter(1, "%" + titulo + "%")
+				.getResultList();
+	}
+
+	@Override
+	public List<Libro> findByAutor(String titulo) {
+		return em.createQuery("FROM Libro l where l.autor.nombre like ?1", Libro.class)
+				.setParameter(1, "%" + titulo + "%").getResultList();
+	}
+
+	@Override
+	public List<Libro> findByAutorJoinFetch(String titulo) {
+		return em.createQuery("FROM Libro l JOIN FETCH l.autor a where a.nombre like ?1", Libro.class)
+				.setParameter(1, "%" + titulo + "%").getResultList();
+	}
+
 }

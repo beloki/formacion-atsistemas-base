@@ -27,4 +27,19 @@ public class LibroServiceImpl implements LibroService {
 		return libroRepository.findAllJoin();
 	}
 
+	@Override
+	public List<Libro> listadoPorTitulo(String titulo) {
+		return libroRepository.findByTituloLike(titulo);
+	}
+
+	@Override
+	public List<Libro> listadoPorAutor(String nombre) {
+		return libroRepository.findByAutor(nombre);
+	}
+
+	@Override
+	public List<Libro> listadoPorAutorFetch(String nombre) {
+		return libroRepository.findByAutorJoinFetch(nombre);
+	}
+
 }
