@@ -1,8 +1,11 @@
 package com.atsistemas.formacion.base.spring.examplewebapp.model;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Pelicula {
 
 	private Integer id;
+	@NotEmpty
 	private String titulo;
 	private String director;
 	private String genero;

@@ -93,6 +93,7 @@
 			             type: "DELETE",
 			             url: eliminarPelicula+"?idPelicula="+idPelicula,
 			             success: function (data) {
+			            	 alert("Se ha eliminado la pelicula " + data);
 			            	 $('#pelicula_'+idPelicula).remove();
 			             },
 			             error: function (e) {

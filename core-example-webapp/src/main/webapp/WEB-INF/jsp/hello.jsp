@@ -8,6 +8,6 @@
 		<title>Spring MVC Example</title>
 	</head>
 	<body>
-		<h2>${message}</h2>
+		<h2>${message} : ${date}</h2>
 	</body>
 </html>
