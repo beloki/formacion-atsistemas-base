@@ -81,8 +81,11 @@ public class PeliculasController {
 	}
 
 	@RequestMapping(value = "/eliminar-pelicula", method = RequestMethod.DELETE)
-	public @ResponseBody void eliminarPelicula(@RequestParam("idPelicula") Integer idPelicula) {
-		peliculasService.eliminarPelicula(idPelicula);
+	@ResponseBody
+	public String eliminarPelicula(@RequestParam(name = "idPelicula") Integer id) {
+		Pelicula pelicula = peliculasService.buscarPelicula(id);
+		peliculasService.eliminarPelicula(id);
+		return pelicula.getTitulo();
 	}
 
 	@ExceptionHandler(RuntimeException.class)
