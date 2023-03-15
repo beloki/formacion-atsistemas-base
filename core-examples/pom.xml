@@ -4,10 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.atsistemas.formacion.base.spring</groupId>
-	<artifactId>core</artifactId>
+	<artifactId>core-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
- 	<name>Spring Core</name>
- 	<description>Example project for Spring Core demonstrations</description>
+	<name>Spring Core</name>
+	<description>Example project for Spring Core demonstrations</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
