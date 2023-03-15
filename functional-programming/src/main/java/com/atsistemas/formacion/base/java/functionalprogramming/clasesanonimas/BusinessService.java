@@ -2,8 +2,8 @@ package com.atsistemas.formacion.base.java.functionalprogramming.clasesanonimas;
 
 public interface BusinessService {
 
-	boolean check();
+	public boolean check();
 
-	Integer doSomething();
+	public Integer doSomething();
 
 }

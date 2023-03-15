@@ -133,6 +133,11 @@ public class StreamMain {
 
 		System.out.println("COLLECT LIST");
 		System.out.println("-------------------");
+		String comaSeparatedNames = names.stream().map(String::toUpperCase).sorted().collect(Collectors.joining(","));
+		System.out.println(comaSeparatedNames);
+
+		System.out.println("COLLECT LIST");
+		System.out.println("-------------------");
 		List<String> oNames = names.stream().filter(name -> name.contains("o")).collect(Collectors.toList());
 		oNames.forEach(System.out::println);
 		System.out.println();
