@@ -1,6 +1,7 @@
 package com.atsistemas.formacion.base.jpa.bootspringdata.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,21 +15,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.atsistemas.formacion.base.jpa.bootspringdata.dto.PeliculaDto;
 import com.atsistemas.formacion.base.jpa.bootspringdata.entity.Pelicula;
+import com.atsistemas.formacion.base.jpa.bootspringdata.mapper.PeliculaMapper;
 import com.atsistemas.formacion.base.jpa.bootspringdata.service.PeliculaService;
 
 @RestController
 public class PeliculasController {
 
 	private PeliculaService peliculaService;
+	private PeliculaMapper peliculaMapper;
 
-	public PeliculasController(PeliculaService peliculaService) {
+	public PeliculasController(PeliculaService peliculaService, PeliculaMapper peliculaMapper) {
 		this.peliculaService = peliculaService;
+		this.peliculaMapper = peliculaMapper;
 	}
 
 	@GetMapping(value = "/peliculas", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Pelicula> listadoPeliculas() {
-		return peliculaService.listarPeliculas();
+	public List<PeliculaDto> listadoPeliculas() {
+		List<Pelicula> listarPeliculas = peliculaService.listarPeliculas();
+		return listarPeliculas.stream().map(peliculaMapper::mapToDto).collect(Collectors.toList());
 	}
 
 	@PostMapping(value = "/peliculas", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

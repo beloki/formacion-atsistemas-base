@@ -1,4 +1,4 @@
-package com.atsistemas.formacion.base.jpa.bootspringdata.service;
+package com.atsistemas.formacion.base.jpa.bootspringdata.service.impl;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.atsistemas.formacion.base.jpa.bootspringdata.entity.Pelicula;
 import com.atsistemas.formacion.base.jpa.bootspringdata.repository.PeliculaRepository;
+import com.atsistemas.formacion.base.jpa.bootspringdata.service.PeliculaService;
 
 @Service
 public class PeliculaServiceImpl implements PeliculaService {
